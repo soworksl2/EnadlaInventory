@@ -4,9 +4,44 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EnadlaInventory.UI.Views.Windows"
+        xmlns:strings="clr-namespace:EnadlaInventory.UI.Strings"
         mc:Ignorable="d"
-        Title="Enadla Inventarios" Height="450" Width="800">
-    <Grid>
+        Title="{x:Static strings:Common.AppName}" WindowState="Maximized"
+        Height="400" Width="700">
+
+    <DockPanel LastChildFill="True">
         
-    </Grid>
+        <!--menu-->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Cuenta">
+                <MenuItem Header="Iniciar sesion"/>
+                <MenuItem Header="Crear nueva cuenta"/>
+                <MenuItem Header="Cerrar sesion"/>
+            </MenuItem>
+        </Menu>
+        
+        <!--Stasus bar-->
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock>
+                    Cuenta: No hay cuenta activa
+                </TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+        
+        <!--Home image-->
+        <!--TODO: replace for an image-->
+        <Grid Background="Khaki">
+            
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-25,0,0">
+                <TextBlock FontSize="{StaticResource ExtraLargeFontSize}" FontWeight="Black"
+                           HorizontalAlignment="Center" Text="{x:Static strings:Common.AppName}"/>
+                <TextBlock FontSize="{StaticResource NormalFontSize}" Foreground="Gray" 
+                           HorizontalAlignment="Center" Text="{x:Static strings:Common.AppShortDescription}"/>
+            </StackPanel>
+        
+        </Grid>
+        
+    </DockPanel>
+
 </Window>

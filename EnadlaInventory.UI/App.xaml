@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:EnadlaInventory.UI" 
              StartupUri="/Views/Windows/HomeWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                
+                <!--importing default style-->
+                <ResourceDictionary Source="/Styles/DefaultStyle.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
