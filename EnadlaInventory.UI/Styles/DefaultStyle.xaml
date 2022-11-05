@@ -3,7 +3,7 @@
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
     <sys:Double x:Key="ExtraSmallFontSize">15</sys:Double> <!--not specificated-->
-    <sys:Double x:Key="SmallFontSize">15</sys:Double> <!--not specificated-->
+    <sys:Double x:Key="SmallFontSize">13</sys:Double>
     <sys:Double x:Key="MediumFontSize">15</sys:Double>
     <sys:Double x:Key="NormalFontSize">18</sys:Double>
     <sys:Double x:Key="LargeFontSize">15</sys:Double> <!--not specificated-->
@@ -17,5 +17,61 @@
     <Style TargetType="StatusBar">
         <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
     </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+    </Style>
     
+    <Style TargetType="PasswordBox">
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+    </Style>
+    
+    <!--normal Textbox error control template-->
+    <ControlTemplate x:Key="NormalTextboxErrorControlTemplate">
+        <StackPanel>
+            <Border BorderBrush="Red" BorderThickness="1.5">
+                <AdornedElementPlaceholder x:Name="AdornedElement"/>
+            </Border>
+            <TextBlock FontSize="{StaticResource SmallFontSize}" Foreground="White" Background="Red"
+                       FontWeight="Bold" TextAlignment="Center" Padding="0,2"
+                       Text="Información del error." 
+                       ToolTip="{Binding ElementName=AdornedElement, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+                       ToolTipService.InitialShowDelay="450"/>
+        </StackPanel>
+    </ControlTemplate>
+    
+    <!--Normal Label Textblock-->
+    <Style x:Key="NormalLabelTextblock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="{StaticResource SmallFontSize}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+    
+    <!--Normal textbox-->
+    <Style x:Key="NormalTextbox" TargetType="{x:Type TextBox}">
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource NormalTextboxErrorControlTemplate}"/>
+
+    </Style>
+    
+    <!--Normal passwordbox-->
+    <Style x:Key="NormalPasswordbox" TargetType="{x:Type PasswordBox}">
+        <Setter Property="Padding" Value="2"/>
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource NormalTextboxErrorControlTemplate}"/>
+    </Style>
+    
+    <!--Normal button-->
+    <Style x:Key="NormalButton" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
+    </Style>
+
 </ResourceDictionary>

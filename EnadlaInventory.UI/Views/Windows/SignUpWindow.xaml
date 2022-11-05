@@ -1,0 +1,54 @@
+﻿<Window x:Class="EnadlaInventory.UI.Views.Windows.SignUpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EnadlaInventory.UI.Views.Windows"
+        xmlns:mvvmHelper="clr-namespace:EnadlaInventory.UI.Helpers.Mvvm"
+        mc:Ignorable="d"
+        
+        Title="Registrarse"
+        Width="350"
+        SizeToContent="Height"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <StackPanel Margin="10">
+        <TextBlock Style="{DynamicResource NormalLabelTextblock}">
+            Nombre de usuario:
+        </TextBlock>
+        <TextBox Style="{DynamicResource NormalTextbox}"
+                 Text="{Binding Path=CurrentUserInfo.OwnerName, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+
+        <TextBlock Style="{DynamicResource NormalLabelTextblock}">
+            Email:
+        </TextBlock>
+        <TextBox Style="{DynamicResource NormalTextbox}"
+                 Text="{Binding Path=CurrentUserInfo.Email, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+
+        <TextBlock Style="{DynamicResource NormalLabelTextblock}">
+            Contraseña:
+        </TextBlock>
+        <PasswordBox Style="{DynamicResource NormalPasswordbox}"
+                     mvvmHelper:PasswordBoxHelper.BindPassword="True"
+                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.Password, Mode=TwoWay, ValidatesOnNotifyDataErrors =True, UpdateSourceTrigger=LostFocus}"/>
+
+        <TextBlock Style="{DynamicResource NormalLabelTextblock}">
+            Confirmar contraseña:
+        </TextBlock>
+        <PasswordBox Style="{DynamicResource NormalPasswordbox}"
+                     mvvmHelper:PasswordBoxHelper.BindPassword="True"
+                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.ConfirmPassword, ValidatesOnNotifyDataErrors=True}"/>
+
+        <Button Style="{DynamicResource NormalButton}">
+            Crear nueva cuenta
+        </Button>
+        <Button Style="{DynamicResource NormalButton}" 
+                Background="IndianRed" 
+                Click="CancelBtn_click">
+            Cancelar
+        </Button>
+    </StackPanel>
+    
+</Window>

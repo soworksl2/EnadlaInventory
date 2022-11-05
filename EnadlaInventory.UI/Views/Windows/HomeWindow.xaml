@@ -15,7 +15,7 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Cuenta">
                 <MenuItem Header="Iniciar sesion"/>
-                <MenuItem Header="Crear nueva cuenta"/>
+                <MenuItem Header="Crear nueva cuenta" Click="onClickCreateNewAccount"/>
                 <MenuItem Header="Cerrar sesion"/>
             </MenuItem>
         </Menu>

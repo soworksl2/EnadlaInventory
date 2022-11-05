@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnadlaInventory.UI", "EnadlaInventory.UI\EnadlaInventory.UI.csproj", "{FE00807C-DEAA-4D19-A5C8-462E203F7BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnadlaInventory.UI", "EnadlaInventory.UI\EnadlaInventory.UI.csproj", "{FE00807C-DEAA-4D19-A5C8-462E203F7BD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnadlaInventory.Core", "EnadlaInventory.Core\EnadlaInventory.Core.csproj", "{5FCFCE6D-4A5B-4337-BC60-AA11071CD9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnadlaInventory.Core.Tests", "EnadlaInventory.Core.Tests\EnadlaInventory.Core.Tests.csproj", "{24AA0A03-F952-4FE5-A706-E2C44A4DD266}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FE00807C-DEAA-4D19-A5C8-462E203F7BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE00807C-DEAA-4D19-A5C8-462E203F7BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE00807C-DEAA-4D19-A5C8-462E203F7BD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FCFCE6D-4A5B-4337-BC60-AA11071CD9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FCFCE6D-4A5B-4337-BC60-AA11071CD9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FCFCE6D-4A5B-4337-BC60-AA11071CD9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FCFCE6D-4A5B-4337-BC60-AA11071CD9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24AA0A03-F952-4FE5-A706-E2C44A4DD266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24AA0A03-F952-4FE5-A706-E2C44A4DD266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24AA0A03-F952-4FE5-A706-E2C44A4DD266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24AA0A03-F952-4FE5-A706-E2C44A4DD266}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
