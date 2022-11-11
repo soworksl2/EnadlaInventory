@@ -31,7 +31,7 @@ namespace EnadlaInventory.Core.Validation.Validators
             RuleSet(RS_SIGNUP_EXTRAS, () =>
             {
                 RuleFor(o => o.ConfirmPassword)
-                    .NotEqual(o => o.Password).WithErrorCode(ErrorCodes.DIFERENT_CONFIRM_PASSWORD);
+                    .Equal(o => o.Password).WithErrorCode(ErrorCodes.DIFERENT_CONFIRM_PASSWORD);
 
                 RuleFor(o => o.OwnerName)
                     .NotEmpty().WithErrorCode(ErrorCodes.EMPY_VALUE)
