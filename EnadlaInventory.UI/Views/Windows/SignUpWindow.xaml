@@ -39,7 +39,7 @@
         </TextBlock>
         <PasswordBox Style="{DynamicResource NormalPasswordbox}"
                      mvvmHelper:PasswordBoxHelper.BindPassword="True"
-                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.ConfirmPassword, ValidatesOnNotifyDataErrors=True}"/>
+                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.ConfirmPassword, Mode=TwoWay, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
 
         <Button Style="{DynamicResource NormalButton}">
             Crear nueva cuenta
