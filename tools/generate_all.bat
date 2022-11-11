@@ -1,0 +1,1 @@
+activate_pyenv.bat && generate_all.py
