@@ -19,7 +19,8 @@
             Nombre de usuario:
         </TextBlock>
         <TextBox Style="{DynamicResource NormalTextbox}"
-                 Text="{Binding Path=CurrentUserInfo.OwnerName, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                 Text="{Binding Path=CurrentUserInfo.OwnerName, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"
+                 MaxLength="25"/>
 
         <TextBlock Style="{DynamicResource NormalLabelTextblock}">
             Email:
