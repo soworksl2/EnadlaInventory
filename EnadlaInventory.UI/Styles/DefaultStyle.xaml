@@ -44,7 +44,7 @@
 
                 <TextBlock.ToolTip>
                     <Binding ElementName="AdornedElement"
-                             Path="AdornedElement.(Validation.Errors)[0].ErrorContent"
+                             Path="AdornedElement.(Validation.Errors)/ErrorContent"
                              Mode="OneWay">
 
                         <Binding.Converter>
