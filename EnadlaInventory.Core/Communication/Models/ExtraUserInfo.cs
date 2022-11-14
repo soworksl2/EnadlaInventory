@@ -7,12 +7,12 @@ namespace EnadlaInventory.Core.Communication.Models
     [System.Reflection.Obfuscation(Exclude = true, ApplyToMembers = false)]
     public class ExtraUserInfo : ObservableAndValidatableObject<ExtraUserInfo>
     {
-        private string _uid;
+        private string? _uid;
         private DateTime _creationDate;
-        private string _creatorMachine;
+        private string? _creatorMachine;
 
         [JsonPropertyName("uid")]
-        public string UID
+        public string? UID
         {
             get
             {
@@ -20,7 +20,7 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._uid, value, true, nameof(UID));
+                this.SetProperty<string?>(ref this._uid, value, true, nameof(UID));
             }
         }
 
@@ -38,7 +38,7 @@ namespace EnadlaInventory.Core.Communication.Models
         }
 
         [JsonPropertyName("creator_machine")]
-        public string CreatorMachine
+        public string? CreatorMachine
         {
             get
             {
@@ -46,7 +46,7 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._creatorMachine, value, true, nameof(CreatorMachine));
+                this.SetProperty<string?>(ref this._creatorMachine, value, true, nameof(CreatorMachine));
             }
         }
 

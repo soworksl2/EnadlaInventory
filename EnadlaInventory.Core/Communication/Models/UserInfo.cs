@@ -7,16 +7,16 @@ namespace EnadlaInventory.Core.Communication.Models
     [System.Reflection.Obfuscation(Exclude = true, ApplyToMembers = false)]
     public class UserInfo : ObservableAndValidatableObject<UserInfo>
     {
-        private string _uid;
-        private string _email;
-        private string _password;
-        private string _confirmPassword;
+        private string? _uid;
+        private string? _email;
+        private string? _password;
+        private string? _confirmPassword;
         private bool _isVerified;
-        private string _ownerName;
-        private ExtraUserInfo _extraInfo;
+        private string? _ownerName;
+        private ExtraUserInfo? _extraInfo;
 
         [JsonPropertyName("uid")]
-        public string UID
+        public string? UID
         {
             get
             {
@@ -24,12 +24,12 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._uid, value, true, nameof(UID));
+                this.SetProperty<string?>(ref this._uid, value, true, nameof(UID));
             }
         }
 
         [JsonPropertyName("email")]
-        public string Email
+        public string? Email
         {
             get
             {
@@ -37,12 +37,12 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._email, value, true, nameof(Email));
+                this.SetProperty<string?>(ref this._email, value, true, nameof(Email));
             }
         }
 
         [JsonPropertyName("password")]
-        public string Password
+        public string? Password
         {
             get
             {
@@ -50,12 +50,12 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._password, value, true, nameof(Password));
+                this.SetProperty<string?>(ref this._password, value, true, nameof(Password));
             }
         }
 
         [JsonIgnore]
-        public string ConfirmPassword
+        public string? ConfirmPassword
         {
             get
             {
@@ -63,7 +63,7 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._confirmPassword, value, true, nameof(ConfirmPassword));
+                this.SetProperty<string?>(ref this._confirmPassword, value, true, nameof(ConfirmPassword));
             }
         }
 
@@ -81,7 +81,7 @@ namespace EnadlaInventory.Core.Communication.Models
         }
 
         [JsonPropertyName("owner_name")]
-        public string OwnerName
+        public string? OwnerName
         {
             get
             {
@@ -89,12 +89,12 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<string>(ref this._ownerName, value, true, nameof(OwnerName));
+                this.SetProperty<string?>(ref this._ownerName, value, true, nameof(OwnerName));
             }
         }
 
         [JsonPropertyName("extra_info")]
-        public ExtraUserInfo ExtraInfo
+        public ExtraUserInfo? ExtraInfo
         {
             get
             {
@@ -102,7 +102,7 @@ namespace EnadlaInventory.Core.Communication.Models
             }
             set
             {
-                this.SetProperty<ExtraUserInfo>(ref this._extraInfo, value, true, nameof(ExtraInfo));
+                this.SetProperty<ExtraUserInfo?>(ref _extraInfo, value, true, nameof(ExtraInfo));
             }
         }
 
