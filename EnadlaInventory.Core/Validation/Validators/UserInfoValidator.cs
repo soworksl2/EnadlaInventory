@@ -38,7 +38,8 @@ namespace EnadlaInventory.Core.Validation.Validators
                     .MinimumLength(MIN_OWNER_NAME_LENGHT).WithErrorCode(ErrorCodes.SHORT_VALUE);
 
                 RuleFor(o => o.ExtraInfo)
-                    .SetValidator(new ExtraUserInfoValidator()).WithErrorCode(ErrorCodes.INVALID_VALUE);
+                    .NotNull().WithErrorCode(ErrorCodes.EMPY_VALUE)
+                    .Must(x => x is null? false : new ExtraUserInfoValidator().Validate(x).IsValid).WithErrorCode(ErrorCodes.INVALID_VALUE);
             });
         }
     }
