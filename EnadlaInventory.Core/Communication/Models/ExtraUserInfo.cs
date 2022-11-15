@@ -54,7 +54,7 @@ namespace EnadlaInventory.Core.Communication.Models
         {
             //TODO: make tha validator singleton and get the instace from there
             DefaultRuleSets = defaultRuleSets;
-            PrepareValidation(this, new ExtraUserInfoValidator());
+            PrepareValidation(this, ExtraUserInfoValidator.Instance);
         }
     
     }

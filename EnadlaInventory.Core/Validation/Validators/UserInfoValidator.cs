@@ -15,7 +15,14 @@ namespace EnadlaInventory.Core.Validation.Validators
         private const int MIN_PASSWORD_LENGHT = 8;
         private const int MIN_OWNER_NAME_LENGHT = 3;
 
-        public UserInfoValidator()
+
+        private static UserInfoValidator _instance = new UserInfoValidator();
+
+
+        public static UserInfoValidator Instance => _instance;
+
+
+        private UserInfoValidator()
         {
             RuleSet(RS_AUTH, () =>
             {
@@ -39,7 +46,7 @@ namespace EnadlaInventory.Core.Validation.Validators
 
                 RuleFor(o => o.ExtraInfo)
                     .NotNull().WithErrorCode(ErrorCodes.EMPY_VALUE)
-                    .Must(x => x is null? false : new ExtraUserInfoValidator().Validate(x).IsValid).WithErrorCode(ErrorCodes.INVALID_VALUE);
+                    .Must(x => x is null? false : ExtraUserInfoValidator.Instance.Validate(x).IsValid).WithErrorCode(ErrorCodes.INVALID_VALUE);
             });
         }
     }

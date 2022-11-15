@@ -109,7 +109,7 @@ namespace EnadlaInventory.Core.Communication.Models
         public UserInfo(params string[] defaultRuleSets)
         {
             DefaultRuleSets = defaultRuleSets;
-            PrepareValidation(this,new UserInfoValidator());
+            PrepareValidation(this, UserInfoValidator.Instance);
         }
     }
 }

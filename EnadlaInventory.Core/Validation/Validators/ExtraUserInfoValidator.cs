@@ -5,7 +5,13 @@ namespace EnadlaInventory.Core.Validation.Validators
 {
     public class ExtraUserInfoValidator : SimpleFuentValidator<ExtraUserInfo>
     {
-        public ExtraUserInfoValidator()
+        private static ExtraUserInfoValidator _instance = new ExtraUserInfoValidator();
+
+
+        public static ExtraUserInfoValidator Instance => _instance;
+
+
+        private ExtraUserInfoValidator()
         {
             RuleFor(o => o.CreatorMachine)
                 .NotEmpty().WithErrorCode(ErrorCodes.EMPY_VALUE);

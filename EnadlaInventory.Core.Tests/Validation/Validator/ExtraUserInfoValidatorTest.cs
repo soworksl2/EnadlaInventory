@@ -22,7 +22,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow(null)]
         public void Validate_with_CreatorMachine_as_empty_is_invalid(string? creatorMachine)
         {
-            ExtraUserInfoValidator validator = new ExtraUserInfoValidator(); ;
+            ExtraUserInfoValidator validator = ExtraUserInfoValidator.Instance;
             ExtraUserInfo extraInfo = GetGoodExtraUserInfo();
             extraInfo.CreatorMachine = creatorMachine;
 

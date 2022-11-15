@@ -29,7 +29,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [TestMethod]
         public void Validating_a_valid_UserInfo_with_all_rulesets()
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo validUserInfo = GetValidUserInfo();
 
             ValidationResult result = validator.Validate(
@@ -44,7 +44,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow("")]
         public void Validate_with_AuthRuleSet_and_email_is_empty_is_invalid(string? email)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.Email = email;
 
@@ -60,7 +60,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow("Jimy.Waner@")]
         public void Validate_with_AuthRuleSet_and_email_without_an_at_in_the_middle_is_invalid(string email)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.Email = email;
 
@@ -75,7 +75,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow(null)]
         public void Validate_with_AuthRuleSet_and_with_empty_password_is_invalid(string? password)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.Password = password;
 
@@ -92,7 +92,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow("1234567")]
         public void Validate_with_AuthRuleSet_and_with_short_password_is_invalid(string password)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.Password = password;
 
@@ -107,7 +107,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow(null)]
         public void Validate_with_ExtraSignUpRuleSet_and_with_empty_OwnerName_is_invalid(string? ownerName)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.OwnerName = ownerName;
 
@@ -122,7 +122,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [DataRow("ji")]
         public void Validate_with_Extra_signUpRuleSet_and_with_short_OwnerName_is_invalid(string ownerName)
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.OwnerName = ownerName;
 
@@ -135,7 +135,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [TestMethod]
         public void Validate_with_ExtraSignUpRuleSet_and_with_diferent_ConfirmPassword_is_invalid()
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.Password = "password";
             userInfo.ConfirmPassword = "confirmPassword";
@@ -149,7 +149,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [TestMethod]
         public void Validate_with_ExtraSignUpRuleSet_and_without_ExtraUserInfo_is_invalid()
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.ExtraInfo = null;
 
@@ -162,7 +162,7 @@ namespace EnadlaInventory.Core.Tests.Validation.Validator
         [TestMethod]
         public void Validate_with_ExtraSignUpRuleSet_and_with_invalid_ExtraInfo_is_invalid()
         {
-            UserInfoValidator validator = new UserInfoValidator();
+            UserInfoValidator validator = UserInfoValidator.Instance;
             UserInfo userInfo = GetValidUserInfo();
             userInfo.ExtraInfo = new ExtraUserInfo() { CreatorMachine = null };
 
