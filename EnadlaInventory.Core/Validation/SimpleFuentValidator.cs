@@ -3,7 +3,7 @@
 namespace EnadlaInventory.Core.Validation
 {
     //TODO: this class need to be validated - Jimy Aguasviva 5-november-2022
-    public abstract class SimpleFuentValidator<TTarget>: AbstractValidator<TTarget>, ISimpleValidator<TTarget>
+    public abstract class SimpleFluentValidator<TTarget>: AbstractValidator<TTarget>, ISimpleValidator<TTarget>
     {
         public ValidationResult Validate(TTarget obj, string? propertyName = null, string[]? ruleSets = null)
         {

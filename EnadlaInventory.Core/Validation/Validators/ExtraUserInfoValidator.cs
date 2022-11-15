@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace EnadlaInventory.Core.Validation.Validators
 {
-    public class ExtraUserInfoValidator : SimpleFuentValidator<ExtraUserInfo>
+    public class ExtraUserInfoValidator : SimpleFluentValidator<ExtraUserInfo>
     {
         private static ExtraUserInfoValidator _instance = new ExtraUserInfoValidator();
 

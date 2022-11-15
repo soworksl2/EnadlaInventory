@@ -3,7 +3,7 @@ using EnadlaInventory.Core.Communication.Models;
 
 namespace EnadlaInventory.Core.Validation.Validators
 {
-    public class UserInfoValidator : SimpleFuentValidator<UserInfo>
+    public class UserInfoValidator : SimpleFluentValidator<UserInfo>
     {
         #region All RuleSets
 
