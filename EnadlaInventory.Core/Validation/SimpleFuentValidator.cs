@@ -2,26 +2,32 @@
 
 namespace EnadlaInventory.Core.Validation
 {
-    //TODO: this class need to be validated - Jimy Aguasviva 5-november-2022
     public abstract class SimpleFluentValidator<TTarget>: AbstractValidator<TTarget>, ISimpleValidator<TTarget>
     {
-        public ValidationResult Validate(TTarget obj, string? propertyName = null, string[]? ruleSets = null)
+        //TODO: validate just validate by ruleSets because FluentValidator does not bring that funcionality
+        //So all properties are validated if they are inside of a specific ruleset and then will be avoided
+        //at the moment of parse to EnadlaInventory ValidationResult - Jimy Aguasviva 16-november-2022
+        public ValidationResult Validate(TTarget obj, string? propertyName = null, params string[]? ruleSets)
         {
             ValidationContext<TTarget> context = ValidationContext<TTarget>.CreateWithOptions(obj, x =>
             {
-                if (!string.IsNullOrEmpty(propertyName))
-                    x.IncludeProperties(propertyName);
-
                 x.IncludeRulesNotInRuleSet();
 
-                if (ruleSets is not null)
+                if (ruleSets is not null && ruleSets.Length > 0)
                     x.IncludeRuleSets(ruleSets);
             });
 
             FluentValidation.Results.ValidationResult validationResult = Validate(context);
             List<ValidationFailure> castedErrors = new List<ValidationFailure>(validationResult.Errors.Count());
             foreach (var error in validationResult.Errors)
+            {
+                if (!string.IsNullOrEmpty(propertyName) && error.PropertyName != propertyName)
+                {
+                    continue;
+                }
+
                 castedErrors.Add(new ValidationFailure(error.PropertyName, error.ErrorCode));
+            }
 
             return new ValidationResult()
             {
