@@ -3,14 +3,14 @@
 namespace EnadlaInventory.Core.Tests.Validation
 {
     [TestClass]
-    public class SimpleFluentValidatorTest
+    public class TestSimpleFluentValidator
     {
         [TestMethod]
         public void Validating_an_invalid_object_and_get_its_errors()
         {
             SimpleFluentValidator<PersonModelSample> simpleFluentValidator = PersonModelSampleValidator.Instance;
             PersonModelSample invalidObj = new PersonModelSample();
-            string[] ruleSets = new string[] { PersonModelSampleValidator.RS_AUTH, PersonModelSampleValidator.RS_NAMES };
+            string[] ruleSets = new string[] { "default", PersonModelSampleValidator.RS_AUTH, PersonModelSampleValidator.RS_NAMES };
 
             ValidationResult result = simpleFluentValidator.Validate(invalidObj, ruleSets: ruleSets);
 
@@ -29,31 +29,37 @@ namespace EnadlaInventory.Core.Tests.Validation
         }
 
         [TestMethod]
-        public void Validate_without_specificate_ruleSets_only_the_default_ruleset_is_executed()
+        public void Validate_without_specificate_ruleSets_all_rulesets_are_executed()
         {
             SimpleFluentValidator<PersonModelSample> simpleFluentValidator = PersonModelSampleValidator.Instance;
             PersonModelSample invalidObj = new PersonModelSample();
 
+
             ValidationResult result = simpleFluentValidator.Validate(invalidObj);
+
 
             Assert.IsFalse(result.IsValid);
             
-            string[] executedRuleSetsExpected = new string[] { "default" };
+            string[] executedRuleSetsExpected = new string[] { "default", PersonModelSampleValidator.RS_AUTH, PersonModelSampleValidator.RS_NAMES };
             CollectionAssert.AreEquivalent(executedRuleSetsExpected, result.ExecutedRuleSets);
 
             List<string> expectedErrors = new List<ValidationFailure>()
             {
-                new ValidationFailure(nameof(PersonModelSample.UID), ErrorCodes.EMPY_VALUE)
+                new ValidationFailure(nameof(PersonModelSample.UID), ErrorCodes.EMPY_VALUE),
+                new ValidationFailure(nameof(PersonModelSample.Name), ErrorCodes.EMPY_VALUE),
+                new ValidationFailure(nameof(PersonModelSample.LastName), ErrorCodes.EMPY_VALUE),
+                new ValidationFailure(nameof(PersonModelSample.Email), ErrorCodes.EMPY_VALUE),
+                new ValidationFailure(nameof(PersonModelSample.Password), ErrorCodes.EMPY_VALUE)
             }.Select(x => $"{x.PropertyName}-{x.ErrorCode}").ToList();
             CollectionAssert.AreEquivalent(expectedErrors, result.Errors.Select(x => $"{x.PropertyName}-{x.ErrorCode}").ToList());
         }
 
         [TestMethod]
-        public void Only_specificated_rulesets_plus_default_are_executed()
+        public void Only_specificated_rulesets_are_executed()
         {
             SimpleFluentValidator<PersonModelSample> simpleFluentValidator = PersonModelSampleValidator.Instance;
             PersonModelSample invalidObj = new PersonModelSample();
-            string[] ruleSets = new string[] { PersonModelSampleValidator.RS_NAMES };
+            string[] ruleSets = new string[] { "default", PersonModelSampleValidator.RS_NAMES };
 
             ValidationResult result = simpleFluentValidator.Validate(invalidObj, ruleSets: ruleSets);
 

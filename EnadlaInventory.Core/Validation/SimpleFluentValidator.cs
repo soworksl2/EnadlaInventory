@@ -11,10 +11,10 @@ namespace EnadlaInventory.Core.Validation
         {
             ValidationContext<TTarget> context = ValidationContext<TTarget>.CreateWithOptions(obj, x =>
             {
-                x.IncludeRulesNotInRuleSet();
-
                 if (ruleSets is not null && ruleSets.Length > 0)
                     x.IncludeRuleSets(ruleSets);
+                else
+                    x.IncludeAllRuleSets();
             });
 
             FluentValidation.Results.ValidationResult validationResult = Validate(context);
