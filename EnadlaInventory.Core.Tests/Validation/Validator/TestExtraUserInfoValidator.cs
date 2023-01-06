@@ -5,7 +5,7 @@ using EnadlaInventory.Core.Validation;
 namespace EnadlaInventory.Core.Tests.Validation.Validator
 {
     [TestClass]
-    public class ExtraUserInfoValidatorTest
+    public class TestExtraUserInfoValidator
     {
         private ExtraUserInfo GetGoodExtraUserInfo()
         {
