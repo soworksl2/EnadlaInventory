@@ -4,6 +4,9 @@ namespace EnadlaInventory.Core.Validation
 {
     public abstract class SimpleFluentValidator<TTarget>: AbstractValidator<TTarget>, ISimpleValidator<TTarget>
     {
+        public static readonly string RS_DEFAULT = "default";
+
+
         //TODO: validate just validate by ruleSets because FluentValidator does not bring that funcionality
         //So all properties are validated if they are inside of a specific ruleset and then will be avoided
         //at the moment of parse to EnadlaInventory ValidationResult - Jimy Aguasviva 16-november-2022
