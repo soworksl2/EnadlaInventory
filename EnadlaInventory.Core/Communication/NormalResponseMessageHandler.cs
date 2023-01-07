@@ -2,7 +2,7 @@
 using EnadlaInventory.Core.Serialization;
 using System.Net.Http.Json;
 
-namespace EnadlaInventory.Core.Communication.ResponseMessage
+namespace EnadlaInventory.Core.Communication
 {
     public sealed class NormalResponseMessageHandler : ResponseMessageHandlerBase
     {

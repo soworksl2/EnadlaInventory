@@ -1,6 +1,4 @@
 ﻿using EnadlaInventory.Core.Communication;
-using EnadlaInventory.Core.Communication.RequestMessageInfo;
-using EnadlaInventory.Core.Communication.ResponseMessage;
 using Moq;
 using System.Text;
 using MockHttp;

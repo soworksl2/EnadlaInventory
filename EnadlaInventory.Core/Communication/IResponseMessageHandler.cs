@@ -1,4 +1,4 @@
-﻿namespace EnadlaInventory.Core.Communication.ResponseMessage
+﻿namespace EnadlaInventory.Core.Communication
 {
     public abstract class ResponseMessageHandlerBase : IDisposable
     {
@@ -13,8 +13,8 @@
         {
             get;
         }
-        
-        
+
+
         public void Consume()
         {
             _isConsumed = true;

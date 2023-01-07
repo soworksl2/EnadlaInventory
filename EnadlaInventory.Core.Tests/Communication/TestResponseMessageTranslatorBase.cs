@@ -1,8 +1,7 @@
-﻿using EnadlaInventory.Core.Communication.ResponseMessage;
-using EnadlaInventory.Core.Communication.ResponseMessage.Translators;
+﻿using EnadlaInventory.Core.Communication;
 using Moq;
 
-namespace EnadlaInventory.Core.Tests.Communication.ResponseMessage.Translator
+namespace EnadlaInventory.Core.Tests.Communication
 {
     [TestClass]
     public class TestResponseMessageTranslatorBase

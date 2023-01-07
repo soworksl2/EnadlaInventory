@@ -1,4 +1,4 @@
-﻿namespace EnadlaInventory.Core.Communication.ResponseMessage.Translators
+﻿namespace EnadlaInventory.Core.Communication
 {
     public abstract class ResponseMessageTranslatorBase : IDisposable
     {

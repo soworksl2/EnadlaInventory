@@ -1,5 +1,4 @@
-﻿using EnadlaInventory.Core.Communication.RequestMessageInfo;
-using EnadlaInventory.Core.Communication.ResponseMessage;
+﻿using EnadlaInventory.Core.Communication;
 using Moq;
 
 namespace EnadlaInventory.Core.Tests.Communication

@@ -1,7 +1,4 @@
-﻿using EnadlaInventory.Core.Communication.RequestMessageInfo;
-using EnadlaInventory.Core.Communication.ResponseMessage;
-
-namespace EnadlaInventory.Core.Communication
+﻿namespace EnadlaInventory.Core.Communication
 {
     public class RequestMessageSender
     {

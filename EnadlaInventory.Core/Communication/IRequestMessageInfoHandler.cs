@@ -1,4 +1,4 @@
-﻿namespace EnadlaInventory.Core.Communication.RequestMessageInfo
+﻿namespace EnadlaInventory.Core.Communication
 {
     public interface IRequestMessageInfoHandler
     {
