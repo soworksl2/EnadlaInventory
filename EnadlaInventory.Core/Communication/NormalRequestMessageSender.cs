@@ -1,6 +1,6 @@
 ﻿namespace EnadlaInventory.Core.Communication
 {
-    public class RequestMessageSender
+    public class NormalRequestMessageSender : IRequestMessageSender
     {
         private HttpClient _httpClient;
         private string _host;
@@ -17,7 +17,7 @@
         }
 
 
-        public RequestMessageSender(HttpClient httpClient, string host)
+        public NormalRequestMessageSender(HttpClient httpClient, string host)
         {
             _httpClient = httpClient;
             _host = host;

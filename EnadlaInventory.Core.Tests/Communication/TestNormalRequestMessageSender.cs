@@ -6,7 +6,7 @@ using MockHttp;
 namespace EnadlaInventory.Core.Tests.Communication
 {
     [TestClass]
-    public class TestRequestMessageSender
+    public class TestNormalRequestMessageSender
     {
         private MockHttpHandler CreateSimpleMockedHttpHandler(string requestUri, HttpMethod method, bool isVerifiable)
         {
@@ -52,7 +52,7 @@ namespace EnadlaInventory.Core.Tests.Communication
             MockHttpHandler httpMessageHandler = CreateSimpleMockedHttpHandler("http://www.someHost.com/someEndpoint/", HttpMethod.Post, true);
             HttpClient client = new HttpClient(httpMessageHandler);
 
-            RequestMessageSender sut = new RequestMessageSender(client, "http://www.someHost.com");
+            NormalRequestMessageSender sut = new NormalRequestMessageSender(client, "http://www.someHost.com");
 
             //Act
             ResponseMessageHandlerBase result = await sut.SendRequestMessageAsync(requestMessageInfoHandlerMocked);
@@ -77,7 +77,7 @@ namespace EnadlaInventory.Core.Tests.Communication
             messageInfoHandlerBuilder.AddLocalServer(responseMessageHandlerMocked);
             IRequestMessageInfoHandler requestMessageInfoHandlerMocked = messageInfoHandlerBuilder.Build();
             
-            RequestMessageSender sut = new RequestMessageSender(new HttpClient(), "http://www.someHost.com");
+            NormalRequestMessageSender sut = new NormalRequestMessageSender(new HttpClient(), "http://www.someHost.com");
 
             //Act
             ResponseMessageHandlerBase result = await sut.SendRequestMessageAsync(requestMessageInfoHandlerMocked);
@@ -102,7 +102,7 @@ namespace EnadlaInventory.Core.Tests.Communication
             MockHttpHandler httpHandler = CreateSimpleMockedHttpHandler("http://www.someHost.com/someEndpoint/", HttpMethod.Post, true);
             HttpClient client = new HttpClient(httpHandler);
 
-            RequestMessageSender sut = new RequestMessageSender(client, "http://www.someHost.com");
+            NormalRequestMessageSender sut = new NormalRequestMessageSender(client, "http://www.someHost.com");
 
             //Act
             ResponseMessageHandlerBase result = await sut.SendRequestMessageAsync(requestMessageInfoHandler);
