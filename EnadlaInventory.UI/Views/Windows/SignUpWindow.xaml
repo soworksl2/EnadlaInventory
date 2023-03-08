@@ -19,28 +19,24 @@
             Nombre de usuario:
         </TextBlock>
         <TextBox Style="{DynamicResource NormalTextbox}"
-                 Text="{Binding Path=CurrentUserInfo.OwnerName, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"
+                 Text=""
                  MaxLength="25"/>
 
         <TextBlock Style="{DynamicResource NormalLabelTextblock}">
             Email:
         </TextBlock>
         <TextBox Style="{DynamicResource NormalTextbox}"
-                 Text="{Binding Path=CurrentUserInfo.Email, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"/>
+                 Text=""/>
 
         <TextBlock Style="{DynamicResource NormalLabelTextblock}">
             Contraseña:
         </TextBlock>
-        <PasswordBox Style="{DynamicResource NormalPasswordbox}"
-                     mvvmHelper:PasswordBoxHelper.BindPassword="True"
-                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.Password, Mode=TwoWay, ValidatesOnNotifyDataErrors =True, UpdateSourceTrigger=LostFocus}"/>
+        <PasswordBox Style="{DynamicResource NormalPasswordbox}"/>
 
         <TextBlock Style="{DynamicResource NormalLabelTextblock}">
             Confirmar contraseña:
         </TextBlock>
-        <PasswordBox Style="{DynamicResource NormalPasswordbox}"
-                     mvvmHelper:PasswordBoxHelper.BindPassword="True"
-                     mvvmHelper:PasswordBoxHelper.BoundPassword="{Binding Path=CurrentUserInfo.ConfirmPassword, Mode=TwoWay, ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=LostFocus}"/>
+        <PasswordBox Style="{DynamicResource NormalPasswordbox}"/>
 
         <Button Style="{DynamicResource NormalButton}">
             Crear nueva cuenta
